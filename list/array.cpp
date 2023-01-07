@@ -3,10 +3,11 @@
 using namespace std;
 
 const int MAX_SIZE = 100;
-
-int list[MAX_SIZE];
+class staticList{
+  private:
+int list1[MAX_SIZE];
 int size;
-
+public:
 void insert(int item, int pos) {
   if (size == MAX_SIZE) {
     cout << "Error: list is full" << endl;
@@ -17,13 +18,13 @@ void insert(int item, int pos) {
     return;
   }
   for (int i = size-1; i >= pos; i--) {
-    list[i+1] = list[i];
+    list1[i+1] = list1[i];
   }
-  list[pos] = item;
+  list1[pos] = item;
   size++;
 }
 
-void delete(int pos) {
+void deleteElement(int pos) {
   if (size == 0) {//
     cout << "Error: list is empty" << endl;
     return;
@@ -33,20 +34,20 @@ void delete(int pos) {
     return;
   }
   for (int i = pos; i < size-1; i++) {
-    list[i] = list[i+1];
+    list1[i] = list1[i+1];
   }
   size--;
 }
+};
 
 int main() {
-  insert(10, 0);
-  insert(20, 1);
-  insert(30, 1);
-  insert(40, 3);
-  delete(2);
-  for (int i = 0; i < size; i++) {
-    cout << list[i] << " ";
-  }
+  staticList s;
+  s.insert(10, 0);
+  s.insert(20, 1);
+  s.insert(30, 1);
+  s.insert(40, 3);
+  s.deleteElement(2);
+
   cout << endl;
   return 0;
 }

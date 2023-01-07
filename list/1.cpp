@@ -6,24 +6,26 @@ using namespace std;
 class staticList
 {
   private:
-  int arr[5]={1, 2, 3, 5}, cur_pos;
+  int *arr, cur_pos, size;
+  int ui, li;
   public:
   staticList(){
-    //   arr = new int[SIZE];
+      arr = new int[SIZE];
       cur_pos=-1;
+      ui=SIZE-1;
+      li=0;
 
   }
   void insertAtLast(int item){
-      int ui=3, li=0;
 
-      if(ui==4){
+      if(ui==SIZE-1){
           cout<<"FULL"<<endl;
       }else{
           ui++;
           arr[ui]=item;
       }
       for(int i=0; i<5; i++){
-          cout<<arr[i]<<" ";
+          cout<<arr[i]<<" \n";
       }
   }
   void insertAtFirst(int item){
@@ -45,9 +47,9 @@ class staticList
       }
   }
   void insert(int item, int pos){
-      int ui=3, li=0;
+      
 
-      if(ui==4){
+      if(size==SIZE-1){
           cout<<"FULL"<<endl;
       }else{
           int k=ui;
@@ -137,6 +139,7 @@ class staticList
 int main(void){
     staticList s;
     s.insertAtFirst(77);
+    s.insertAtLast(55);
     // s.insert(9, 2);
-    s.deleteItem(16);
+    // s.deleteItem(2);
 }
