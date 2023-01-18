@@ -167,20 +167,22 @@ void randomDelete(int pos)
 int main(void)
 {
     frontInsert(head, 78);
+    display();
     frontInsert(head, 88);
-    frontInsert(head, 47);
     display();
-    firstDelete();
-    display();
-    backInsert(head, 55);
-    backInsert(head, 25);
-    backInsert(head, 69);
+    // frontInsert(head, 47);
+    // display();
+    // firstDelete();
+    // display();
+    // backInsert(head, 55);
+    // backInsert(head, 25);
+    // backInsert(head, 69);
     // display();
     // randomInsert(14, 3);
-    display();
-    backDelete();
-    display();
-    randomDelete(3);
-    display();
+    // display();
+    // backDelete();
+    // display();
+    // randomDelete(3);
+    // display();
 
 }
