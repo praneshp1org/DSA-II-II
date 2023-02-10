@@ -2,17 +2,17 @@
 #include<stdio.h>
 using namespace std;
 #define INFINITY 9999
-#define max 5
-void dijkstra(int G[max][max],int n,int startnode);
+#define max 6
+void dijkstra(float G[max][max],int n,int startnode);
 int main() {
-   int G[max][max]={{0,1,0,3,10},{1,0,5,0,0},{0,5,0,2,1},{3,0,2,0,6},{10,0,1,6,0}};
-   int n=5;
+   float G[max][max]={{0,5.7,0,3.3,1.5,0},{5.7,0,5.35,0,0, 4.7},{0,5.35,0,3.48,5.87, 0},{3.3,0,3.48, 0,0,2.3},{1.5,5.87,0,0,0}, {0, 4.7, 0, 2.3, 0, 0}};
+   int n=6;
    int u=0;
    dijkstra(G,n,u);
    return 0;
 }
-void dijkstra(int G[max][max],int n,int startnode) {
-   int cost[max][max],distance[max],pred[max];
+void dijkstra(float G[max][max],int n,int startnode) {
+   float cost[max][max],distance[max],pred[max];
    int visited[max],count,mindistance,nextnode,i,j;
    for(i=0;i<n;i++)
       for(j=0;j<n;j++)

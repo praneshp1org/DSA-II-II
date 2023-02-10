@@ -1,5 +1,4 @@
 #include <iostream>
-#include <chrono>
 #define n 5
 using namespace std;
 using namespace std::chrono;
@@ -24,7 +23,6 @@ void search(int key)
     {
         printf("SEARCH UNSUCCESSFULL!\n");
     }
-    // auto stop = high_resolution_clock::now();
 
 
 }
@@ -33,9 +31,5 @@ void search(int key)
 int main(void)
 {
     LinearSearch l;
-    auto start = high_resolution_clock::now();
     l.search(90);
-    auto stop = high_resolution_clock::now();
-    auto duration = duration_cast<microseconds>(stop - start);
-    cout << duration.count() << endl;
 }
